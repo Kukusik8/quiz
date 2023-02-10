@@ -1,37 +1,39 @@
 import './index.scss';
 import React from 'react';
-import { set } from 'immutable';
-import QueryString from 'qs';
-import { coerce } from 'yargs';
+
+
+
 
 const questions = [
   {
-    title: 'React - это ... ?',
-    variants: ['библиотека', 'фреймворк', 'приложение'],
-    correct: 0,
+    title: 'Столица Австралии ?',
+    variants: ['Оттава', 'Хельсинки', 'Канбера'],
+    correct: 2,
   },
   {
-    title: 'Компонент - это ... ',
-    variants: ['приложение', 'часть приложения или страницы', 'то, что я не знаю что такое'],
-    correct: 1,
+    title: 'Sin 90 = ? ',
+    variants: ['0', '-1', '1'],
+    correct:2,
   },
   {
-    title: 'Что такое JSX?',
+    title: 'Какой пароль от этого ноутбука?',
     variants: [
-      'Это простой HTML',
-      'Это функция',
-      'Это тот же HTML, но с возможностью выполнять JS-код',
+      '31319',
+      '33119',
+      '33119',
     ],
     correct: 2,
   },
 ];
 
-function Result() {
+function Result({correct}) {
   return (
     <div className="result">
-      <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt='quez'/>
-      <h2>Вы отгадали 4 ответа из 4</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"/>
+      <h2>Вы отгадали {correct} ответа из {questions.length} </h2>
+      <a href='/' >
       <button>Попробовать снова</button>
+      </a>
     </div>
   );
 }
@@ -61,14 +63,14 @@ function Game({step,question,onClickVariant}) {
 function App() {
   const [step,setStep] = React.useState(0);
   const question = questions[step]
-  // const [correct,setCorrect] = React.useState(0);
+  const [correct,setCorrect] = React.useState(0);
 
   const onClickVariant = (index) => {
     console.log(step,index);
     setStep(step + 1 ); 
-    // if (index === question.correct){
-    //   setCorrect(correct + 1 )
-    // } ;
+    if (index === question.correct){
+      setCorrect(correct + 1 )
+    } ;
   };
 
 
@@ -77,9 +79,9 @@ function App() {
       {
         step !== questions.length ? (<Game step = {step} question={question}  onClickVariant = {onClickVariant} /> 
         ): (
-        <Result   />
+        <Result correct={correct}  />
         )}          
-      {/* correct={correct} */}
+      
     </div>
   );
 }

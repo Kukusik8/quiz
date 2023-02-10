@@ -5,7 +5,7 @@ body {
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #c94747;
+  background-color: #26ddd4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ body {
   width: 500px;
   border-radius: 30px;
   padding: 40px;
-  background-color: #fff;
+  background-color: #dadada;
   position: relative;
 
   .result {
@@ -29,8 +29,8 @@ body {
       border: 0;
       padding: 15px 30px;
       font-size: 20px;
-      background-color: darken(#ff006e, 3%);
-      color: #fff;
+      background-color: darken(#f72424, 3%);
+      color: #ffffff;
       margin-top: 20px;
       cursor: pointer;
     }
@@ -47,7 +47,7 @@ body {
   .progress {
     height: 10px;
     border-radius: 30px;
-    background-color: rgb(232, 232, 232);
+    background-color: rgb(196, 193, 193);
     margin-bottom: 25px;
 
     &__inner {
@@ -82,7 +82,7 @@ body {
   &:after {
     width: 90%;
     bottom: -20px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(194, 128, 128, 0.3);
     z-index: 1;
   }
 
@@ -96,14 +96,14 @@ body {
 
     li {
       padding: 15px;
-      border: 2px solid rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(0, 47, 255, 0.1);
       border-radius: 15px;
       margin-bottom: 10px;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
 
       &:hover {
-        border: 2px solid rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(0, 255, 191, 0.3);
       }
     }
   }
